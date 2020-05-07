@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <product-sync>
+        <interval>12</interval>
+        <splitsize>10</splitsize>
+        <initiateAPI>Product/extract/initalize</initiateAPI>
+        <finalizeAPI>Product/extract/finalize</finalizeAPI>
+    </product-sync>
+    <common>
+        <siteID>1</siteID>
+    </common>
+    <sx-mbe-sync>
+        <authorization-role>Administrators</authorization-role>
+    </sx-mbe-sync>
+    <mbe-sx-sync>
+        <syncAPI>Sync</syncAPI>
+    </mbe-sx-sync>
+    <middleware-connect>
+        <baseUrl>http://10.1.1.237:8080/api/</baseUrl>
+        <timeOut>30</timeOut>
+        <connectionTimeOut>30</connectionTimeOut>
+        <contentType>application/json</contentType>
+        <authorization>Token 44c7d537cb5e8bd91532e621a4341874</authorization>
+    </middleware-connect>
+</config>

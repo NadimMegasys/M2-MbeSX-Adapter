@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="mbesx" translate="label" sortOrder="400">
+            <label>MBESX SYNC</label>
+        </tab>
+        <section id="mbesx" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Configurations</label>
+            <tab>mbesx</tab>
+            <resource>MbeSX_Adapter::config</resource>
+            <group id="site_options" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Setup</label>
+                <attribute type="expanded">1</attribute>
+                <field id="enable_push" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Push to SX</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="site_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Site ID</label>
+                </field>
+            </group>
+            <group id="email_options" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+                <label>Email Notifications</label>
+                <attribute type="expanded">0</attribute>
+                <field id="from_email" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>From Email</label>
+                </field>
+                <field id="to_email" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>To Emails</label>
+                </field>
+                <field id="failure_subject" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Failure Subject</label>
+                </field>
+            </group>
+            <group id="middleware_options" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+                <label>Middleware Connection Settings</label>
+                <attribute type="expanded">0</attribute>
+                <field id="base_url" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Base Url</label>
+                </field>
+                <field id="authorization" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Authorization</label>
+                </field>
+            </group>
+            <group id="order_status_method_mapping" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+                <label>Order Status Method Mapping</label>
+                <attribute type="expanded">0</attribute>
+                <field id="new_order_statuses" translate="label comment" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>New Order Status</label>
+                    <source_model>Magento\Sales\Model\ResourceModel\Order\Status\Collection</source_model>
+                    <validate>validate-select</validate>
+                    <can_be_empty>0</can_be_empty>
+                    <comment>Method will be 1 for the orders with the status</comment>
+                </field>
+                <field id="cancelled_order_statuses" translate="label comment" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Cancelled Order Status</label>
+                    <source_model>Magento\Sales\Model\ResourceModel\Order\Status\Collection</source_model>
+                    <validate>validate-select</validate>
+                    <can_be_empty>0</can_be_empty>
+                    <comment>Method will be 3 for the orders with the status</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

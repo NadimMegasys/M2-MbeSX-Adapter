@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:Magento:module:Magento_Email:etc/email_templates.xsd">
+<template id="mbesx_error_notifier" label="Sync to SX Failed email" file="mbesx_error_notifier.html" type="html" module="MbeSX_Adapter" area="frontend"/>
+</config>

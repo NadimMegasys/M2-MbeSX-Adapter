@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+   <event name="customer_delete_after">
+        <observer name="customer_delete"
+                  instance="MbeSX\Adapter\Observer\CustomerDeleteAfter"/>
+    </event>
+    <event name="customer_address_delete_after">
+        <observer name="customer_delete_address"
+                  instance="MbeSX\Adapter\Observer\CustomerAddressDeleteAfter"/>
+     </event>
+     <event name="customer_address_save_before">
+         <observer name="customer_address_save_before"
+                   instance="MbeSX\Adapter\Observer\CustomerAddressSaveBefore"/>
+     </event>
+     <event name="customer_address_save_commit_after">
+         <observer name="customer_address_save_commit_after"
+                   instance="MbeSX\Adapter\Observer\CustAddSaveCommitAfter"/>
+     </event>
+   <event name="customer_save_before">
+         <observer name="customer_save_before"
+                   instance="MbeSX\Adapter\Observer\CustomerSaveBefore"/>
+     </event>
+     <event name="customer_save_commit_after">
+         <observer name="customer_save_commit_after"
+                   instance="MbeSX\Adapter\Observer\CustomerSaveCommitAfter"/>
+     </event>
+    <event name="sales_order_save_after">
+        <observer name="sales_order_save_after"
+                  instance="MbeSX\Adapter\Observer\SalesOrderSaveAfter"/>
+    </event>
+    <event name="controller_front_send_response_before">
+        <observer name="controller_response"
+                  instance="MbeSX\Adapter\Observer\HttpResponse"/>
+    </event>
+</config>
